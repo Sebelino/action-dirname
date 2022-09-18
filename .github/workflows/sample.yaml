@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       #- uses: sebelino/action-dirname@latest
+      - uses: actions/checkout@v3.0.2
       - uses: ./
         id: dirname
         with:
