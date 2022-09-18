@@ -1,5 +1,5 @@
 # action-dirname
-Given a JSON array of file paths, outputs a JSON array of directories of those files.
+Given a set of file paths, outputs the set of directories containing those files.
 
 ## Inputs
 
