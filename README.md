@@ -15,6 +15,22 @@ A JSON array of directories containing the files.
 
 ## Example usage
 
+```yaml
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sebelino/action-dirname@v1.0.3
+        id: dirname
+        with:
+          files: '["main.tf", "versions.tf", "modules/vpc/sg.tf"]'
+      - run: |
+          # Will output: [".","modules/vpc"]
+          echo ${{ toJson(steps.dirname.outputs.directories) }}
+```
+
+## Development
+
 ```bash
 $ go run ./app.go '["main.tf", "versions.tf", "modules/vpc/sg.tf"]'
 [".","modules/vpc"]
