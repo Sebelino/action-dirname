@@ -4,6 +4,5 @@ COPY app.go go.mod ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
 
 FROM alpine:3.16.2
-WORKDIR /app/
-COPY --from=builder /build/app ./
-ENTRYPOINT ["./app"]
+COPY --from=builder /build/app /app
+ENTRYPOINT ["/app"]
