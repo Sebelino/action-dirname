@@ -1,4 +1,4 @@
-name: 'dirname'
+name: 'action-dirname'
 description: 'Given a set of file paths, outputs the set of directories containing those files.'
 author: Sebelino
 branding:
