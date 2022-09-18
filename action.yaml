@@ -1,6 +1,9 @@
 name: 'dirname'
 description: 'Given a set of file paths, outputs the set of directories containing those files.'
 author: Sebelino
+branding:
+  color: gray-dark
+  icon: folder
 inputs:
   files:
     description: 'A JSON array of file paths.'
