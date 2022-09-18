@@ -1,0 +1,13 @@
+name: 'dirname'
+inputs:
+  files:
+    description: 'A JSON array of file paths.'
+    required: true
+outputs:
+  directories:
+    description: 'A JSON array of directories containing the files.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.files }}
