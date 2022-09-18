@@ -13,7 +13,7 @@ jobs:
           files: '["main.tf", "versions.tf", "modules/vpc/sg.tf"]'
       - run: |
           # Will output: [".","modules/vpc"]
-          echo ${{ steps.dirname.outputs.directories }}
+          echo ${{ toJson(steps.dirname.outputs.directories) }}
   test:
     runs-on: ubuntu-latest
     steps:
@@ -23,4 +23,4 @@ jobs:
         with:
           files: '["main.tf", "versions.tf", "modules/vpc/sg.tf"]'
       - run: |
-          echo ${{ steps.dirname.outputs.directories }}
+          echo ${{ toJson(steps.dirname.outputs.directories) }}
