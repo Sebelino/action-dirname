@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sebelino/action-dirname@v1.0.0
+        id: dirname
+        with:
+          files: '["main.tf", "versions.tf", "modules/vpc/sg.tf"]'
+      - run: |
+          echo "Output: ${{ steps.dirname.outputs.directories }}"
