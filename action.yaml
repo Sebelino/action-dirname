@@ -13,6 +13,6 @@ outputs:
     description: 'A JSON array of directories containing the files.'
 runs:
   using: 'docker'
-  image: 'docker://sebelino/action-dirname:v1.0.4'
+  image: 'docker://sebelino/action-dirname:v1.0.5'
   args:
     - ${{ inputs.files }}
