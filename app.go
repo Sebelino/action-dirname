@@ -27,5 +27,5 @@ func main() {
 	}
 	dirBytes, err := json.Marshal(dirs)
 
-	fmt.Println(string(dirBytes))
+	fmt.Println(fmt.Sprintf("::set-output name=directories::%s", dirBytes))
 }
