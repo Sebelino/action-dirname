@@ -7,11 +7,20 @@ jobs:
   sample:
     runs-on: ubuntu-latest
     steps:
-      #- uses: sebelino/action-dirname@latest
+      - uses: sebelino/action-dirname@v1.0.3
+        id: dirname
+        with:
+          files: '["main.tf", "versions.tf", "modules/vpc/sg.tf"]'
+      - run: |
+          # Will output: [".","modules/vpc"]
+          echo ${{ steps.dirname.outputs.directories }}
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v3.0.2
       - uses: ./
         id: dirname
         with:
           files: '["main.tf", "versions.tf", "modules/vpc/sg.tf"]'
       - run: |
-          echo "Output: ${{ steps.dirname.outputs.directories }}"
+          echo ${{ steps.dirname.outputs.directories }}
