@@ -7,7 +7,8 @@ jobs:
   sample:
     runs-on: ubuntu-latest
     steps:
-      - uses: sebelino/action-dirname@latest
+      #- uses: sebelino/action-dirname@latest
+      - uses: ./
         id: dirname
         with:
           files: '["main.tf", "versions.tf", "modules/vpc/sg.tf"]'
